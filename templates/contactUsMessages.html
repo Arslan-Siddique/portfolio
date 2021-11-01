@@ -1,0 +1,40 @@
+{% extends 'adminBaseTemplate.html' %}
+
+{% block maincontent %}
+<br>
+<br>
+   <!--  sale analytics start -->
+<div class="col-xl-12 col-md-12">
+ <div class="card">
+ <div class="card-header">
+ <h5>Users Data Only</h5>
+ </div>
+ <table style="width:100" class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Subject</th>
+      <th scope="col"> Message </th>
+      <th scope="col"> Action </th>
+    </tr>
+  </thead>
+  <tbody>
+{% for message in data  %}
+    <tr>
+      <td scope="row">{{message.id}}</td>
+      <td scope="row">{{message.cname}}</td>
+      <td scope="row">{{message.csubject}}</td>
+      <td>{{message.cmsg}}</td>
+      <td><a href="mailto:{{cemail}}"<button type="button" class="btn btn-primary">Reply</button></a></td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>                                                   
+
+ </div>
+ 
+ </div>
+
+
+{% endblock maincontent %}
